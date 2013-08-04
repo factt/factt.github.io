@@ -1,0 +1,145 @@
+@import url(imports/mixins.less);
+@import url(imports/setup.less);
+
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background: #FFFFFF;
+}
+
+#masthead {
+	background: @color_primary;
+	color: #FFFFFF;
+	padding: 8em 0;
+	text-align: center;
+
+	.site-title {
+		border: 2px solid #FFFFFF;
+		color: #FFFFFF;
+		font-size: 3em;
+		margin: 0 auto;
+		margin-bottom: 0.618em;
+		width: 130px; /* Dimensions of FACTT */
+		&:hover {
+			background: #FFFFFF;
+			color: @color_primary;
+		}
+		.transition();
+		a {
+			color: #FFFFFF;
+			&:hover {
+				color: @color_primary;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.site-description {
+		color: #FFFFFF;
+		margin-bottom: 1.618em;
+	}
+}
+
+.site-title {
+	border: 2px solid #999999;
+	color: #999999;
+	font-size: 2em;
+	width: 84px; /* Dimensions of FACTT */
+	padding: 0.2em 0.5em;
+	font-weight: bold;
+}
+
+.column-group {
+	width: 100%;
+	max-width: 980px;
+	margin: 1.618em auto;
+
+	.column {
+		border-right: 1px solid #DDDDDD;
+		display: inline-block;
+		width: 15%;
+		margin-left: 2.5%;
+		padding-right: 2.5%;
+		&.last {
+			padding-right: 0;
+			border: 0;
+		}
+		&.first {
+			margin-left: 0;
+		}
+
+		header {
+			h1 {
+				font-size: 1.618em;
+			}
+		}
+	}
+}
+
+.newsletter-signup {
+	background: @color_primary;
+	color: #FFFFFF;
+	padding: 2em;
+	.call-to-action {
+		float: left;
+		h1 {
+			color: #FFFFFF;
+			font-size: 1.618em;
+		}
+	}
+	form {
+		.clearfix();
+		width: 100%;
+		max-width: 980px;
+		margin: 0 auto;
+		fieldset {
+			float: right;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			.input-text {
+				background: #FFFFFF;
+				color: @color_primary;
+				font-size: 0.9em;
+				font-family: 'Helvetica', Arial, sans-serif;
+				border: 1px solid darken(@color_links, 10%);
+				padding: 2em 3em;
+				min-width: 20em;
+				text-align: left;
+				outline: none;
+				&:focus {
+					border: 1px solid darken(@color_links, 15%);
+				}
+			}
+			button {
+				background: darken(@color_links, 10%);
+				color: #FFFFFF;
+				border: 1px solid darken(@color_links, 10%);
+				padding: 1.6em 2em;
+				&:hover {
+					background: darken(@color_links, 15%);
+				}
+			}
+		}
+	}
+}
+
+#colophon {
+	color: #999999;
+	padding: 1.618em 0;
+	width: 100%;
+	max-width: 980px;
+	margin: 0 auto;
+	.clearfix();
+	.footer-info {
+		float: left;
+		p {
+			margin-bottom: 0.618em;
+		}
+	}
+	.footer-credits {
+		float: right;
+	}
+}

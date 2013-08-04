@@ -1,0 +1,260 @@
+/*-------------------------------------------------------------------------------------------*/
+/* 1. SETUP */
+/*-------------------------------------------------------------------------------------------*/
+
+/* 1.1 Defaults */
+html {
+	font-size: 62.5%; // Reset font size to 10px for easy calculation
+}
+body  {
+	font-size:1.3em; // 14 px
+	line-height: 1.618; // golden ratio
+	color: @color_body;
+	font-family: @sans;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+img  { vertical-align: bottom; max-width: 100%; }
+hr { background-color: @border_main; border:0; height: 1px; margin-bottom: 1.618em; }
+
+/* 1.2 Hyperlinks */
+
+a, a:visited {
+	color: @color_links;
+	text-decoration:none;
+
+	&:hover {
+		color: @color_links - #222;
+		text-decoration: underline;
+	}
+
+	img {
+		-webkit-transform: translateZ(0); /* Fix image flickering issue */
+		.transition(opacity, ease-out, .10s);
+		&:hover {opacity:0.75;}
+	}
+}
+
+/* 1.3 Typography */
+/*
+	All typography (and layout) based on a modular scale using 12 & 14 px values scaled in accordance the golden ratio (1.618)
+	http://modularscale.com/scale/?px1=14&px2=12&ra1=1.618&ra2=0
+	Remember to keep margins consistent and try to avoid margin-top. If everything has an appropriate margin-bottom we don't need one and vertical rhythm will be kept consistent
+*/
+
+h1, h2, h3, h4, h5, h6  {
+	font-family: @sans;
+	color: @color_primary;
+	font-weight: normal;
+	margin:0 0 .618em;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+h1  {
+	font-size: 2.244em;
+	line-height: 1.387em;
+}
+h2 {
+	font-size: 1.618em;
+	line-height: 1.387em;
+}
+h3  {
+	font-size: 1.387em;
+}
+h4  {
+	font-size: 1em;
+}
+h5  {
+	font-size: 1em;
+}
+h6  {
+	font-size: 0.857em;
+}
+p {
+	-webkit-hyphens : auto;
+	-webkit-hyphenate-character : "\2010";
+	-webkit-hyphenate-limit-after : 1;
+	-webkit-hyphenate-limit-before : 3;
+	-moz-hyphens : manual;
+	orphans : 3;
+	widows : 3;
+}
+
+mark {
+	background: none;
+	color: @color_body + #111;
+}
+// Set up consistent margins for all relevent block level elements
+ul,ol,dl,
+p,
+table,
+form,
+pre,
+hr {
+	margin: 0 0 1.618em 0;
+}
+
+li > ul,
+li > ol{
+	margin:0 0 0 1.618em;
+}
+
+dl {
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		margin-bottom:1.618em;
+	}
+}
+
+/*
+@font-face icons
+- Used for the subscribe & connect social icons. If you would like to add more icons to the font, you can do so by rebuilding the font at http://keyamoon.com/icomoon/app/ and replace the existing font files in the theme with the new ones.
+*/
+@font-face {
+	font-family: 'Social';
+	font-weight: normal; font-style: normal;
+	src: url('@{fontpath}/social.eot');
+	src: url('@{fontpath}/social.eot?#iefix') format('embedded-opentype'), url('imports/fonts/social.woff') format('woff'), url('imports/fonts/social.ttf') format('truetype'), url('imports/fonts/social.svg#WebSymbolsRegular') format('svg');
+}
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('@{fontpath}/fontawesome-webfont.eot');
+	src: url('@{fontpath}/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+	url('@{fontpath}/fontawesome-webfont.woff') format('woff'),
+	url('@{fontpath}/fontawesome-webfont.ttf') format('truetype'),
+	url('@{fontpath}/fontawesome-webfont.svg#FontAwesome') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* 1.4 Tables */
+// TABLES
+table {
+    border-spacing: 0;
+    width:100%;
+    border:1px solid @border_main;
+    .border_radius(4px);
+    .box_shadow(0,1px,2px,0,@border_main + #242424);
+    border-collapse: separate;
+    td,th {
+      padding:.857em 1.387em;
+      text-align: left;
+      border-right:1px dotted @border_main;
+      vertical-align: top;
+      p:last-child {
+      	margin-bottom:0;
+      }
+    }
+    thead {
+      th {
+        background: #fff;
+        border-right:1px dotted @bg_light - #111;
+        border-bottom:1px solid @border_main;
+        text-transform: uppercase;
+        padding:1.387em;
+        vertical-align: middle;
+        &:first-child {
+          .border_radius_left(4px);
+          .border_radius_bottom(0);
+        }
+        &:last-child {
+          .border_radius_right(4px);
+          .border_radius_bottom(0);
+        }
+      }
+    }
+    tr {
+      th:last-child, td:last-child {
+        border-right:0;
+      }
+    }
+    tbody {
+      th {
+      	background: #fff;
+      	border-bottom:1px solid @border_main;
+      }
+      tr:nth-child(2n) {
+        td {
+          border-right:1px dotted @bg_light - #111;
+          &:last-child {
+          	border-right:0;
+          }
+        }
+      }
+      td {
+        border-bottom:1px solid @border_main;
+        -webkit-box-shadow:
+          inset 0 1px 0 0 @bg_light,
+          inset 0 -1px 0 #fff;
+        box-shadow:
+          inset 0 1px 0 0 @bg_light,
+          inset 0 -1px 0 #fff;
+      }
+      h2 {
+        font-size: 1em;
+        letter-spacing: normal;
+        font-weight: normal;
+        a {
+          font-weight: normal;
+        }
+      }
+      tr:last-child {
+        td:first-child {
+          .border_radius_bottom(4px);
+          .border_radius_right(0);
+        }
+        td:last-child {
+          .border_radius_bottom(4px);
+          .border_radius_left(0);
+        }
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+}
+
+/* Buttons */
+a.button,
+a.comment-reply-link,
+#commentform #submit,
+.submit,
+input[type=submit],
+input.button,
+button.button {
+  display: inline-block;
+  padding: .236em .857em;
+  color: white;
+  text-align: center;
+  border: none;
+  text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
+  text-decoration: none;
+  font-size: 1em; /* Make inputs the same size as normal text */
+  font-family: inherit; /* Make inputs use the correct typeface instead of the browser default */
+  cursor: pointer; /* Inputs need pointers! */
+  overflow: visible; /* IE fix */
+  width:auto; /* IE fix */
+  line-height: 1.618em;
+  .borderbox;
+  white-space: nowrap;
+  background: @color_links;
+
+  &:hover { text-decoration: none; background: darken(@color_links, 10%); }
+  &:active {
+    border-color: @color_links - #555;
+    .inset_box_shadow(0,0,7px,0,rgba(0,0,0,0.3));
+  }
+
+  &.large { font-size:1.387em; }
+  &.small { font-size:.857em; }
+}
