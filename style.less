@@ -149,3 +149,83 @@ html, body {
 		float: right;
 	}
 }
+
+/* Smartphone - Portrait */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+	.newsletter-signup {
+		form {
+			fieldset {
+				.input-text {
+					min-width: 14em;
+				}
+			}
+		}
+	}
+}
+
+/* Smartphone - Landscape */
+@media only screen and (max-width: 480px) {
+	html, body {
+		max-width: 100%;
+	}
+
+	.column-group {
+		.column {
+			padding: 1.618em;
+			header {
+				float: none;
+				width: 100%;
+				text-align: left;
+			}
+			.content {
+				float: none;
+				width: 100%;
+			}
+		}
+	}
+
+	.newsletter-signup {
+		.call-to-action, form fieldset { float: none; }
+	}
+
+	#colophon {
+		width: auto;
+		max-width: 100%;
+		padding: 1.618em;
+		.footer-info {
+			float: none;
+			margin-bottom: 1.618em;
+		}
+		.footer-credits {
+			float: none;
+		}
+	}
+}
+
+/* Tablet - Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.column-group {
+		.column {
+			header {
+				h1 {
+					font-size: 1.4em;
+				}
+			}
+		}
+	}
+
+	.newsletter-signup {
+		form {
+			fieldset {
+				.input-text {
+					min-width: 14em;
+				}
+			}
+		}
+	}
+
+	#colophon {
+		width: auto;
+		padding: 1.618em;
+	}
+}
