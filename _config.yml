@@ -7,7 +7,7 @@ markdown: rdiscount
 
 # configuration required for some pages
 
-# domain: factt.org
+domain: factt.github.io
 title: FACTT
 author: The FACTT Team
 email: info@factt.org

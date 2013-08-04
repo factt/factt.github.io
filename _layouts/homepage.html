@@ -1,57 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-			<section id="pillars" class="column-group">
-				<div id="pillar-fun" class="column first">
-					<header>
-						<h1>Fun</h1>
-					</header>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed convallis sem. Curabitur in commodo eros. Mauris pretium condimentum mi, quis viverra leo volutpat et. Nam turpis enim, cursus a volutpat vel, dapibus sed metus. Donec sollicitudin elementum lacus, vitae pulvinar tortor imperdiet et. Proin pellentesque nibh nec tellus commodo tincidunt. Maecenas ornare leo ut mi suscipit sit amet vulputate eros fermentum. Nulla ultrices iaculis feugiat. Sed vel ligula turpis. Vestibulum sit amet tincidunt elit. Donec non nunc vel sapien pulvinar volutpat. Proin vel arcu ut nunc feugiat molestie sed eget eros. Suspendisse mollis turpis a risus euismod luctus.</p>
-					</div><!--/.content-->
-				</div><!--/#pillar-fun .column first-->
-				<div id="pillar-action" class="column">
-					<header>
-						<h1>Action</h1>
-					</header>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed convallis sem. Curabitur in commodo eros. Mauris pretium condimentum mi, quis viverra leo volutpat et. Nam turpis enim, cursus a volutpat vel, dapibus sed metus. Donec sollicitudin elementum lacus, vitae pulvinar tortor imperdiet et. Proin pellentesque nibh nec tellus commodo tincidunt. Maecenas ornare leo ut mi suscipit sit amet vulputate eros fermentum. Nulla ultrices iaculis feugiat. Sed vel ligula turpis. Vestibulum sit amet tincidunt elit. Donec non nunc vel sapien pulvinar volutpat. Proin vel arcu ut nunc feugiat molestie sed eget eros. Suspendisse mollis turpis a risus euismod luctus.</p>
-					</div><!--/.content-->
-				</div><!--/#pillar-action .column-->
-				<div id="pillar-communication" class="column">
-					<header>
-						<h1>Communication</h1>
-					</header>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed convallis sem. Curabitur in commodo eros. Mauris pretium condimentum mi, quis viverra leo volutpat et. Nam turpis enim, cursus a volutpat vel, dapibus sed metus. Donec sollicitudin elementum lacus, vitae pulvinar tortor imperdiet et. Proin pellentesque nibh nec tellus commodo tincidunt. Maecenas ornare leo ut mi suscipit sit amet vulputate eros fermentum. Nulla ultrices iaculis feugiat. Sed vel ligula turpis. Vestibulum sit amet tincidunt elit. Donec non nunc vel sapien pulvinar volutpat. Proin vel arcu ut nunc feugiat molestie sed eget eros. Suspendisse mollis turpis a risus euismod luctus.</p>
-					</div><!--/.content-->
-				</div><!--/#pillar-communication .column-->
-				<div id="pillar-transparency" class="column">
-					<header>
-						<h1>Transparency</h1>
-					</header>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed convallis sem. Curabitur in commodo eros. Mauris pretium condimentum mi, quis viverra leo volutpat et. Nam turpis enim, cursus a volutpat vel, dapibus sed metus. Donec sollicitudin elementum lacus, vitae pulvinar tortor imperdiet et. Proin pellentesque nibh nec tellus commodo tincidunt. Maecenas ornare leo ut mi suscipit sit amet vulputate eros fermentum. Nulla ultrices iaculis feugiat. Sed vel ligula turpis. Vestibulum sit amet tincidunt elit. Donec non nunc vel sapien pulvinar volutpat. Proin vel arcu ut nunc feugiat molestie sed eget eros. Suspendisse mollis turpis a risus euismod luctus.</p>
-					</div><!--/.content-->
-				</div><!--/#pillar-transparency .column-->
-				<div id="pillar-trust" class="column last">
-					<header>
-						<h1>Trust</h1>
-					</header>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed convallis sem. Curabitur in commodo eros. Mauris pretium condimentum mi, quis viverra leo volutpat et. Nam turpis enim, cursus a volutpat vel, dapibus sed metus. Donec sollicitudin elementum lacus, vitae pulvinar tortor imperdiet et. Proin pellentesque nibh nec tellus commodo tincidunt. Maecenas ornare leo ut mi suscipit sit amet vulputate eros fermentum. Nulla ultrices iaculis feugiat. Sed vel ligula turpis. Vestibulum sit amet tincidunt elit. Donec non nunc vel sapien pulvinar volutpat. Proin vel arcu ut nunc feugiat molestie sed eget eros. Suspendisse mollis turpis a risus euismod luctus.</p>
-					</div><!--/.content-->
-				</div><!--/#pillar-trust .column last-->
-			</section><!--/#pillars .column-group-->
-			<section id="newsletter-signup" class="newsletter-signup">
-				<form method="post">
-					<header class="call-to-action">
-						<h1>Sign up for the FACTT newsletter</h1>
-						<p class="description">Get FACTT tips, tricks and ideas, right in your inbox.</p><!--/.description-->
-					</header><!--/.call-to-action-->
-					<fieldset>
-						<div class="signup-fields">
-							<input type="text" placeholder="Your Email Address..." class="input-text" />
-							<button class="button button-primary">Sign Up</button>
-						</div><!--/.signup-fields-->
-					</fieldset>
-				</form>
-			</section><!--/#newsletter-signup .newsletter-signup-->
+    <link rel="stylesheet" media="screen" href="/stylesheets/code.css" type="text/css" />
+	  <link rel="stylesheet" media="screen" href="/stylesheets/page.css" type="text/css" />
+
+    {% if site.feedburner %}
+    <link href="http://feeds.feedburner.com/{{ site.feedburner.id }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
+    {% endif %}
+    
+    {% if site.google_analytics %}
+    <!-- google analytics async -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ site.google_analytics.account }}']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {% endif %}
+  </head>
+  <body>
+    <div class="top">
+      <header>
+        <div class="logo"><a href ="/">GitHub Teach</a></div>
+        <a href="https://github.com/github/teach.github.com/blob/gh-pages/{{page.path}}" class="mini-button"><span>R</span>View it on GitHub</a>
+      </header>
+    </div>
+
+    <div id="content-wrapper">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </div>
+    
+  </body>
+</html>
