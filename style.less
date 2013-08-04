@@ -57,23 +57,29 @@ html, body {
 	margin: 1.618em auto;
 
 	.column {
-		border-right: 1px solid #DDDDDD;
-		display: inline-block;
-		width: 15%;
-		margin-left: 2.5%;
-		padding-right: 2.5%;
+		border-bottom: 1px solid #CCCCCC;
+		margin-bottom: 1.618em;
+		.clearfix();
 		&.last {
-			padding-right: 0;
-			border: 0;
+			border-bottom: 0;
 		}
-		&.first {
-			margin-left: 0;
-		}
-
 		header {
+			float: left;
+			margin-right: 1.618em;
+			width: 25%;
+			text-align: right;
 			h1 {
+				background: @color_primary;
+				color: #FFFFFF;
+				display: inline-block;
+				padding: 0.309em 0.618em;
 				font-size: 1.618em;
+				text-transform: uppercase;
 			}
+		}
+		.content {
+			float: left;
+			width: 70%;
 		}
 	}
 }

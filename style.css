@@ -464,21 +464,36 @@ body {
   margin: 1.618em auto;
 }
 .column-group .column {
-  border-right: 1px solid #DDDDDD;
-  display: inline-block;
-  width: 15%;
-  margin-left: 2.5%;
-  padding-right: 2.5%;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 1.618em;
+}
+.column-group .column:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
 }
 .column-group .column.last {
-  padding-right: 0;
-  border: 0;
+  border-bottom: 0;
 }
-.column-group .column.first {
-  margin-left: 0;
+.column-group .column header {
+  float: left;
+  margin-right: 1.618em;
+  width: 25%;
+  text-align: right;
 }
 .column-group .column header h1 {
+  background: #a1082e;
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 0.309em 0.618em;
   font-size: 1.618em;
+  text-transform: uppercase;
+}
+.column-group .column .content {
+  float: left;
+  width: 70%;
 }
 .newsletter-signup {
   background: #a1082e;
